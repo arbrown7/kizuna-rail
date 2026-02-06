@@ -1,3 +1,24 @@
+#filters {
+  display: grid;
+  /*I got help from AI on this code*/
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+
+  .filter {
+    display: flex;
+    flex-direction: column;
+
+    &.filter-left {
+      justify-self: left;
+    }
+
+    &.filter-right {
+      justify-self: right;
+    }
+    /*end of AI help*/
+  }
+}
+
 .routes-grid {
     display: flex;
     flex-direction: column;

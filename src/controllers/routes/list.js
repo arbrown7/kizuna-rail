@@ -5,11 +5,17 @@ export default async (req, res) => {
     const seasonSort = req.query.season || '';
 
     const regions = await getListOfRegions();
-    const routes = await getAllRoutes();
+    let routes = await getAllRoutes();
     const seasons = await getListOfSeasons();
     
     if (regionSort && seasonSort) {
-        //TODO sort by region and season
+        routes = await getRoutesByRegion(regionSort);
+
+        //***AI Generated Code***
+        routes = routes.filter(route =>
+            route.bestSeason.toLowerCase() === seasonSort.toLowerCase()
+        );
+        //***End of AI Code***/
 
     } else if (regionSort) {
         routes = await getRoutesByRegion(regionSort);
