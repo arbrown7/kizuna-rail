@@ -45,24 +45,6 @@ export const getRoutesByDistance = async () => {
     return [...db().routes].sort((a, b) => a.distance - b.distance);
 };
 
-export const getMonthNames = (monthIndex) => {
-    const monthNames = [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec",
-    ];
-    
-    return monthNames[monthIndex-1];
-}
 
 // STATION MODEL FUNCTIONS
 

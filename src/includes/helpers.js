@@ -26,4 +26,28 @@ const yenToUsd = (yen) => {
     return yen * exchangeRate;
 };
 
-export { generateConfirmationCode, kmToMiles, yenToUsd };
+/**
+ * Converts a number to a month name.
+ * @param {number} monthIndex the number of the month.
+ * @returns {string} The equivalent month of the year.
+ */
+const getMonthNames = (monthIndex) => {
+    const monthNames = [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+    ];
+    
+    return monthNames[monthIndex-1];
+}
+
+export { generateConfirmationCode, kmToMiles, yenToUsd, getMonthNames };

@@ -1,4 +1,5 @@
-import { getRouteById, getSchedulesByRoute, getMonthNames } from '../../models/model.js';
+import { getRouteById, getSchedulesByRoute } from '../../models/model.js';
+import { getMonthNames } from '../../includes/helpers.js';
 
 export default async (req, res) => {
     const { routeId } = req.params;
