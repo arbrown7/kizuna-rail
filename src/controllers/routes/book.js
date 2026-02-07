@@ -1,4 +1,5 @@
 import { createConfirmation, getScheduleById, getTicketOptionsForRoute } from '../../models/model.js';
+import { yenToUsd } from '../../includes/helpers.js';
 
 const bookingPage = async (req, res) => {
     const { scheduleId } = req.params;
@@ -7,10 +8,12 @@ const bookingPage = async (req, res) => {
 
     const ticketOptions = await getTicketOptionsForRoute(schedule.routeId, scheduleId);
 
+    const updatedTicketOptions = ticketOptions.map(ticket => ({ ...ticket, price: yenToUsd(ticket.price) }));
+
     res.render('routes/book', {
         title: 'Book Trip',
         schedule,
-        ticketOptions
+        ticketOptions: updatedTicketOptions
     });
 };
 
