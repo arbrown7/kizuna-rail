@@ -415,5 +415,22 @@ article.confirmation-page {
             background-color: white;
             border: 2px solid var(--clr-primary);
         }
+
+        .passengers-info {
+            display: none;
+        }
+
+        .next-steps {
+            display: none;
+        }
+
+        .important-info {
+            display: none;
+        }
+
+        .confirmation-actions {
+            display: none !important;
+        }
     }
+
 }
